@@ -71,7 +71,7 @@ client.joinOrCreate<StateHandler>("game").then(room => {
         player.position.onChange = () => {
            
             if(key != room.sessionId){
-   
+
                 if( Math.abs(playerViews[key].position.x)<0.2&&Math.abs(playerViews[key].position.y)<0.5&&Math.abs(playerViews[key].position.x)<0.2){
                     playerViews[key].position=new BABYLON.Vector3(player.position.x, player.position.y, player.position.z)
                 }else{
@@ -79,14 +79,6 @@ client.joinOrCreate<StateHandler>("game").then(room => {
                         new BABYLON.Vector3((player.position.x-playerViews[key].position.x)*10,
                         (player.position.y-playerViews[key].position.y)*10,
                         (player.position.z-playerViews[key].position.z)*10))
-                     //   box.rotationQuaternion=BABYLON.Quaternion.Slerp(box.rotationQuaternion,new BABYLON.Quaternion(message.quaternion.x, message.quaternion.y, message.quaternion.z,message.quaternion.w),0.4)
-
-                    //  playerViews[key].physicsImpostor.setAngularVelocity(
-                    //     new BABYLON.Quaternion((player.quaternion.x- playerViews[key].rotationQuaternion.x)*5,
-                    //     (player.quaternion.y- playerViews[key].rotationQuaternion.y)*5,
-                    //     (player.quaternion.z- playerViews[key].rotationQuaternion.z)*5,
-                    //     (player.quaternion.w- playerViews[key].rotationQuaternion.w)*5)
-                    //     )
                         playerViews[key].rotationQuaternion=BABYLON.Quaternion.Slerp(playerViews[key].rotationQuaternion,new BABYLON.Quaternion(player.quaternion.x, player.quaternion.y, player.quaternion.z,player.quaternion.w),0.4)
                 }
                 
