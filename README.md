@@ -3,6 +3,14 @@
 
 <img src="screenshot.png?raw=true" />
 
+The red mesh calculates the physical effects locally of the current user, and the green mesh calculates the physical effects on the clients of other players, and then synchronizes them through colyseus.
+
+As for the player character, the sphere represents the player character, and the cube represents the interactive objects in the scene.
+
+The first player to enter the scene is responsible for the physical calculation of the cube, and other players are responsible for receiving data and rendering. When other players collide with the cube, the physical calculation of the cube is transferred to the collided players. You can distinguish these changes by color, just like the difference between green and red mentioned above.
+
+This is a very simple system. It will sacrifice some physical effects and has no server verification. However, you can still use it to achieve some recommended network physical collision effects.
+
 be based on:
 [https://github.com/endel/colyseus-babylonjs-boilerplate](https://github.com/endel/colyseus-babylonjs-boilerplate)
 
