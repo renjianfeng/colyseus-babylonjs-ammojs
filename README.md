@@ -20,6 +20,7 @@ To be able to build the client application, you'll need to enter in the folder,
 and install its dependencies first.
 
 ```
+cd client/
 npm install
 ```
 
@@ -37,7 +38,7 @@ It will spawn the `webpack-dev-server`, listening on [http://localhost:8080](htt
 For the server, the steps are exactly the same. Install the dependencies:
 
 ```
-cd babylonjs-multiplayer-boilerplate/server
+cd server/
 npm install
 ```
 
